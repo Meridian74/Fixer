@@ -9,7 +9,6 @@ import modell.FeliratMezo;
 
 public final class FeliratKiiro {
    
-   // field változók
    private static File irandoFile;
    
    /* SINGLETON tervezési modell szerint -- csak belülről lesz a konstruktor elérhető, 

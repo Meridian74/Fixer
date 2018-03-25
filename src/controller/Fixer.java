@@ -18,13 +18,13 @@ public class Fixer {
       String utvonal = feliratLista.getFileUtvonal();       // a munkakönyvtár útvonala
       feliratLista.mentesiMappaLetrehozas(utvonal);         // a mentési mappa létrehozása a munkakönyvtáron belül
       String [] fileok = feliratLista.getFileokListaja();   // az ".srt" kiterjesztésű file-ok listája a munkakönyvtárban
+
+      // létrehozunk két adatlistát aminek elemei FeliratMezo-k.
+      ArrayList<FeliratMezo> eredeti;   
+      ArrayList<FeliratMezo> javitott;
       
       // végigmegyünk a kapott file-ok listáján
       for(String feliratFile : fileok) {
-         // létrehozunk két adatlistát aminek elemei FeliratMezo-k.
-         ArrayList<FeliratMezo> eredeti = new ArrayList<>();   
-         ArrayList<FeliratMezo> javitott = new ArrayList<>();
-         
          // A felirat adatlistánk feltöltése FeliratMezo-kkel.
          eredeti = feliratOlvaso.beolvasas(utvonal + feliratFile);   
          

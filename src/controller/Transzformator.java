@@ -25,9 +25,12 @@ public final class Transzformator {
          
          ArrayList<FeliratMezo> javitottFelirat = new ArrayList<>(); // létrehozunk egy dinamikus listát a javitott felirat számára
          
-         // az első feliratelem változatlan marad - ez így lesz majd jó.
+         // az első feliratelem változatlan marad - ez így lesz majdnem jó is egészében, csak a záró időpontot kell javítani.
          elsoElem = eredetiFelirat.get(0);
          elsoElem.setSzoveg(elsoElem.getSzoveg() + "\n");            // a szöveg után legyen egy üres sor is.
+         // az első időintervallum javítása: - az kezdő időpont megtartva és hozzáadva a következő feliratmező időpontjának start ideje.
+         elsoElem.setIdoIntervallum(eredetiFelirat.get(0).getIdoIntervallum().substring(0, 17) 
+                                    + eredetiFelirat.get(1).getIdoIntervallum().substring(0, 12)); 
          javitottFelirat.add(elsoElem);
          
          // a további feliratelemeket már kettesével vesszük elő
